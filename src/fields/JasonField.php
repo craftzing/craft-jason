@@ -75,7 +75,7 @@ class JasonField extends Field
      *
      * @return array
      */
-    public function rules()
+    public function rules(): array
     {
         $rules = parent::rules();
 
@@ -121,7 +121,7 @@ class JasonField extends Field
      *
      * @return mixed The prepared field value
      */
-    public function normalizeValue($value, ElementInterface $element = null)
+    public function normalizeValue($value, ElementInterface $element = null): mixed
     {
         if (Craft::$app->request->getIsSiteRequest() && !Craft::$app->request->getIsActionRequest()) {
             return json_decode($value, true);
@@ -143,7 +143,7 @@ class JasonField extends Field
      *
      * @return null|false `false` in the event that the method is sure that no elements are going to be found.
      */
-    public function serializeValue($value, ElementInterface $element = null)
+    public function serializeValue($value, ElementInterface $element = null): null|false
     {
         return parent::serializeValue($value, $element);
     }
@@ -240,7 +240,7 @@ class JasonField extends Field
      *
      * @return string|null
      */
-    public function getSettingsHtml()
+    public function getSettingsHtml(): null|string
     {
         // Register our asset bundle
         Craft::$app->getView()->registerAssetBundle(JasonFieldAsset::class, View::POS_BEGIN );
