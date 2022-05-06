@@ -143,7 +143,7 @@ class JasonField extends Field
      *
      * @return null|false `false` in the event that the method is sure that no elements are going to be found.
      */
-    public function serializeValue($value, ElementInterface $element = null): null|false
+    public function serializeValue($value, ElementInterface $element = null): null|bool
     {
         return parent::serializeValue($value, $element);
     }
